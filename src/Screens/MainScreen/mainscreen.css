@@ -1,0 +1,113 @@
+.main-screen{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+.app-bar{
+    width: 100%;
+    height: 10vh;
+    background-color: #D8CEFF;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    box-sizing: border-box;
+}
+
+.project-title{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.profile{
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.user-details{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+
+.name{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.email{
+    font-size: 14px;
+    color: gray;
+}
+
+.profile-pic{
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../Assets/Images/profile_img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.main-content{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-screen::-webkit-scrollbar {
+    display: none;
+  }
+
+.main-text{
+    width: 100%;
+    height: 50vh;
+    /* background-color: yellow; */
+}
+
+.ppt-side-bar{
+    height: 520px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-ppt{
+    width:100%;
+    height: 90vh;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-1, .content-2, .content-3{
+    width: 350px;
+    height: 160px;
+    /* background-color: blue; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ppt{
+    width: 910px;
+    height: 520px;
+    /* background-color: blue; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
