@@ -6,6 +6,7 @@ import { path } from "../../Assets/pdf/path";
 function MainScreen() {
   const [islogin, setIslogin] = useState(false);
   return (
+    // main container
     <div className="main-screen">
       <div className="app-bar">
         <div className="project-title">Project Name</div>
