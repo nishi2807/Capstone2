@@ -46,9 +46,10 @@
     font-size: 18px;
 }
 
-.email{
-    font-size: 14px;
-    color: gray;
+.useremail{
+    font-size: 18px;
+    /* color: gray; */
+    font-weight: 700;
 }
 
 .profile-pic{
