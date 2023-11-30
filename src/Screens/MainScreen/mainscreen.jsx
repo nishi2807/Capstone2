@@ -79,6 +79,7 @@ function MainScreen() {
     }
   };
 
+  // sign up function
   const handleSignUp = () => {
     if (issignup) {
       setIslogin(true);
