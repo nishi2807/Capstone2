@@ -1,0 +1,201 @@
+ Cyber Security Questions
+1. Define Cybersecurity?
+Cybersecurity refers to the protection of internet-connected systems such as software, hardware, electronic data, etc., from cyber attacks. In computing text, it is referred to as protection against unauthorized access.
+2. What is Cryptography?
+Cryptography is a method to transform and transmit confidential data in an encoded way to protect the information from third parties for whom data is not authorized.
+3. What is the difference between Threat, Vulnerability, and Risk?
+Threat: Someone with the potential to cause harm by damaging or destroying the official data of a system or organization.
+Ex: Phishing attack
+Vulnerability: It refers to weaknesses in a system that makes threat outcomes more possible and even more dangerous.
+Ex: SQL injections, cross-site scripting
+Risk: It refers to a combination of threat probability and impact/loss. In simple terms, it is related to potential damage or loss when a threat exploits the vulnerability.
+Threat probability * Potential loss = Risk
+4. What is Cross-Site Scripting and how it can be prevented?
+Cross-site scripting is also known as a client-side injection attack, which aims at executing malicious scripts on a victim’s web browser by injecting malicious code.
+The following practices can prevent Cross-Site Scripting:
+
+ Encoding special characters Using XSS HTML Filter Validating user inputs
+Using Anti-XSS services/tools
+5. What is the difference between IDS and IPS?
+    Intrusion Detection Systems (IDS)
+Intrusion Prevention Systems (IPS)
+It only detects intrusions but is unable to prevent intrusions.
+It detects and prevents intrusions.
+It's a monitoring system.
+It’s a control system.
+It needs a human or another system to look at the results.
+It needs a regularly updated database with the latest threat data.
+    6. What is a Botnet?
+A Botnet is a group of internet-connected devices such as servers, PCs, mobile devices, etc., that are affected and controlled by malware.
+It is used for stealing data, sending spam, performing distributed denial-of-service attacks (DDoS attacks), and more, and also to enable the user to access the device and its connection.
+7. What is a CIA triad?
+CIA (confidentiality, integrity, and availability) triad is a model designed to handle policies for information security within an organization.
+● Confidentiality - A collection of rules that limits access to information.
+
+ ● Integrity - It assures the information is trustworthy and reliable.
+● Availability - It provides reliable access to data for authorized people.
+8. Symmetric vs. asymmetric encryption.
+     Purpose
+Symmetric Encryption
+Asymmetric Encryption
+Encryption:
+Uses a single key to encrypt and decrypt information.
+Uses a pair of public and private keys to encrypt and decrypt information.
+Speed:
+Symmetric encryption performs faster
+Asymmetric encryption performs slower compared to symmetric encryption.
+Algorithms:
+AES, RC4, DES, QUAD, 3DES, Blowfish, etc.
+Diffie-Hellman and RSA
+Purpose:
+Preferred for transferring huge data
+Mostly used for exchanging secret keys safely.
+     9. What is the difference between hashing and encryption?
+Both hashing and encryption are used to convert readable data into an unreadable format. The significant difference is that encrypted data can be transformed into original data by decryption, whereas hashed data cannot be processed back to the original data.
+10. What is two-factor authentication and how it can be implemented for public websites?
+● Tw0-factor authentication is also referred to as dual-factor authentication or two-step verification where the user provides two authentication factors for protecting both user credentials and resources while accessing.
+
+ ● The two-factor authentication can be implemented on public websites such as Twitter, Microsoft, LinkedIn, and more for enabling another protection on your already protected account with a password.
+● For enabling this double factor authentication, you can easily go to settings and then manage security settings.
+11. What is the use of a firewall and how it can be implemented?
+A firewall is a security system used to control and monitor network traffic. It is used for protecting the system/network from malware, viruses, worms, etc., and secures unauthorized access from a private network.
+The steps required to set up and configure the firewall are listed below:
+● Change the default password for a firewall device.
+● Disable the remote administration feature.
+● Configure port forwarding for specific applications to function correctly,
+such as an FTP server or a web server.
+● Firewall installation on a network with an existing DHCP server can cause
+errors unless its firewall’s DHCP is disabled.
+● Make sure the firewall is configured to robust security policies.
+12. What is the difference between vulnerability assessment and penetration testing?
+● The terms Vulnerability assessment and penetration testing are both different, but serve an essential function of protecting the network environment.
+● Vulnerability Assessment: It’s a process to define, detect, and prioritize the vulnerabilities in computer systems, network infrastructure, applications, etc., and gives the organization the required information to fix the flaws.
+● Penetration Testing: It is also called pen testing or ethical hacking. It’s a process of testing a network, system, application, etc. to identify vulnerabilities that attackers could exploit. In the context of web application security, it is most widely used to augment a web application firewall (WAF).
+
+ 13. What is the difference between stored and reflected XSS?
+● Stored XSS Attacks - The attacks where the injected scripts are stored on the target servers permanently. In this, the victim retrieves the malicious script from the server when requests the stored information.
+● Reflected XSS Attacks - In this, the user has to send the request first, then it will start running on the victim’s browser and reflects results from the browser to the user who sent the request.
+14. What is a three-way handshake process?
+A three-way handshake process is used in TCP (Transmission Control Protocol) network for the transmission of data in a reliable way between the host and the client.
+It’s called a three-way handshake because three segments are exchanged between the server and the client.
+● SYN: The client wants to establish a connection with the server, and sends a segment with SYN(Synchronize Sequence Number) to the server if the server is up and has open ports.
+● SYN + ACK: The server responds to the client request with SYN-ACK signal bits set if it has open ports.
+● ACK: The client acknowledges the response of a server and sends an ACK(Acknowledgment) packet back to the server.
+15. What are HTTP response codes?
+HTTP response codes display whether a particular HTTP request has been completed.
+● 1xx (Informational) - The request has been received, and the process is continuing.
+● 2xx (Success) - The request was successfully received and accepted.
+● 3xx (Redirection) - Further action must be taken to complete it.
+● 4xx (Client Error) - Request cannot be fulfilled or has incorrect syntax.
+● 5xx (Server Error) - The server fails to fulfill the request.
+16. What are the techniques used in preventing a Brute Force Attack?
+
+ Brute Force Attack is a trial and error method that is employed for application programs to decode encrypted data such as data encryption keys or passwords using brute force rather than using intellectual strategies. It’s a way to identify the right credentials by repetitively attempting all the possible methods.
+Brute Force attacks can be avoided by the following practices:
+● Adding password complexity: Include different formats of characters to make passwords stronger.
+● Limit login attempts: set a limit on login failures.
+● Two-factor authentication: Add this layer of security to avoid brute-force
+attacks.
+17. List the common types of cybersecurity attacks.
+The following are the most common types of cybersecurity attacks:
+● Malware
+● SQL Injection Attack
+● Cross-Site Scripting (XSS)
+● Denial-of-Service (DoS)
+● Man-in-the-Middle Attacks
+● Credential Reuse
+● Phishing
+● Session Hijacking
+18 Define data leakage and its types.
+Data Leakage refers to the illegal transmission of data to an external destination or unauthorized entity within an organization. It can transfer data either physically or electronically. It usually occurs via the web, emails, and mobile data storage devices.
+Types of data leakage:
+1. The Accidental Breach - The majority of data leakage incidents are accidental.
+
+ Ex: An entity may choose the wrong recipient while sending confidential data.
+2. The Disgruntled or ill-intentioned Employee - The authorized entity sends confidential data to an unauthorized body.
+3. Electronic Communications with Malicious Intent - The problem is all electronic mediums are capable of file transferring and external access sources over the internet.
+19. What is the use of a Traceroute?
+A Traceroute is a network diagnostic tool, used for tracking the pathway of an IP network from source to destination. It records the period of each hop the packet makes while its route to its destination.
+20. How to prevent CSRF attacks?
+CSRF is referred to as Cross-site Request Forgery, where an attacker tricks a victim into performing actions on their behalf.
+CSRF attacks can be prevented by using the following ways:
+● Employing the latest antivirus software which helps in blocking malicious scripts.
+● While authenticating to your banking site or performing any financial transactions on any other website do not browse other sites or open any emails, which helps in executing malicious scripts while being authenticated to a financial site.
+● Never save your login/password within your browser for financial transactions.
+● Disable scripting in your browser. 21. What is port scanning?
+A port scanning is an application designed for identifying open ports and services accessible on a host network. Security administrators mostly utilize it for exploiting vulnerabilities, and also by hackers for targeting victims.
+Some of the most popular port scanning techniques are listed below:
+● Ping scan
+
+ ● TCP connect
+● TCP half-open
+● Stealth scanning – NULL, FIN, X-MAS
+● UDP
+22. What is the need for DNS monitoring?
+● DNS (Domain Name System) is a service that is used for converting user-friendly domain names into a computer-friendly IP address. It allows websites under a particular domain name that is easy to remember.
+● DNS monitoring is nothing but monitoring DNS records to ensure does it route traffic properly to your website, electronic communication, services, and more.
+23. What is the difference between hashing and salting?
+● Hashing is majorly used for authentication and is a one-way function where data is planned to a fixed-length value.
+● Salting is an extra step for hashing, where it adds additional value to passwords that change the hash value created.
+24. How to prevent a ‘Man-in-the-Middle Attack’?
+The following practices prevent the ‘Man-in-the-Middle Attacks’:
+● Have stronger WAP/WEP Encryption on wireless access points avoids unauthorized users.
+● Use a VPN for a secure environment to protect sensitive information. It uses key-based encryption.
+● Public key pair-based authentication must be used in various layers of a stack for ensuring whether you are communicating the right things are not.
+● HTTPS must be employed for securely communicating over HTTP through
+the public-private key exchange.
+25. What are the common methods of authentication for network security?
+
+ ● Biometrics - It is a known and registered physical attribute of a user specifically used for verifying their identity.
+● Token - A token is used for accessing systems. It makes it more difficult for hackers to access accounts as they have long credentials.
+● Transaction Authentication - A one-time pin or password is used in processing online transactions through which they verify their identity.
+● Multi-Factor Authentication - It’s a security system that needs more than one method of authentication.
+● Out-of-Band Authentication - This authentication needs two different signals from two different channels or networks. It prevents most of the attacks from hacking and identity thefts in online banking.
+26. Which is more secure SSL or HTTPS?
+● SSL (Secure Sockets Layer) is a secure protocol that provides safer conversations between two or more parties across the internet. It works on top of the HTTP to provide security.
+● HTTPS (Hypertext Transfer Protocol Secure) is a combination of HTTP and SSL to provide a safer browsing experience with encryption.
+● In terms of security, SSL is more secure than HTTPS.
+27. What is the difference between black hat, white hat, and grey hat hackers?
+● A black-hat hacker is a person who tries to obtain unauthorized access into a system or a network to steal information for malicious purposes.
+● White-hat hackers are also known as ethical hackers; they are well-versed with ethical hacking tools, methodologies, and tactics for securing organization data. They try to detect and fix vulnerabilities and security holes in the systems. Many top companies recruit white hat hackers.
+● A grey hat hacker is a computer security expert who may violate ethical standards or rules sometimes but does not have the malicious intent of a black hat hacker.
+28. What is cognitive security?
+
+ Cognitive security is one of the applications of AI technologies that is used explicitly for identifying threats and protecting physical and digital systems based on human understanding processes.
+Self-learning security systems use pattern recognition, natural language processing, and data mining to mimic the human brain.
+29. What is phishing and how it can be prevented?
+Phishing is a malicious attempt to pretend oneself as an authorized entity in electronic communication to obtain sensitive information such as usernames, passwords, etc. through fraudulent messages and emails.
+The following practices can prevent phishing:
+● Use firewalls on your networks and systems.
+● Enable robust antivirus protection that has internet security.
+● Use two-factor authentication wherever possible
+● Maintain adequate security.
+● Don't enter sensitive information such as financial or digital transaction
+details on web pages that you don't trust.
+● Keep yourself updated with the latest phishing attempts.
+30. What is SQL injection and how it can be prevented?
+SQL Injection (SQLi) is a type of code injection attack where it manages to execute malicious SQL statements to control a database server behind a web application. Attackers mostly use this to avoid application security measures and thereby access, modify, and delete unauthorized data.
+The following ways will help you to mitigate or prevent SQL injection attacks:
+● Include Prepared Statements (with Parameterized Queries)
+● Use Stored Procedures
+● Validate user input
+● Hide data from the error message
+● Update your system
+● Store database credentials separately and encrypted
+● Disable shell and any other functionalities you don’t need
+
+ 31. How will you keep yourself updated with the latest cybersecurity news?
+The following ways will help you to keep up with the latest cybersecurity updates:
+● Follow news websites and blogs from security experts.
+● Browse security-related social media topics.
+● Check vulnerability alert feeds and advisory sites.
+● Attend cybersecurity live events.
+32. What is a DDOS attack and how to stop and prevent them?
+A DDOS (distributed denial-of-service ) is a malicious attempt to disrupt the regular traffic of a network by flooding it with a large number of requests and making the server unavailable to the appropriate requests. The requests come from several unauthorized sources and are hence called distributed denial of service attacks.
+The following methods will help you to stop and prevent DDOS attacks:
+● Build a denial of service response plan
+● Protect your network infrastructure
+● Employ basic network security
+● Maintain strong network architecture
+● Understand the Warning Signs
+● Consider DDoS as a service
