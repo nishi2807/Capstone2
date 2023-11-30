@@ -1,0 +1,93 @@
+.chat-page {
+  height: 70vh;
+  width: 30vw;
+
+  position: absolute;
+  right: 20px;
+  top: 80px;
+
+  border-radius: 7px;
+  background-color: azure;
+  box-shadow: 0 0 20px #d8ceff;
+
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat-area{
+    width: 100%;
+    height: calc(70vh - 100px);
+
+    margin-top: 20px;
+    padding-inline: 20px;
+    box-sizing: border-box;
+
+    /* background-color: #525BDB; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    overflow-y: auto;
+}
+
+.chat-area::-webkit-scrollbar {
+    display: none;
+  }
+
+.msg{
+    padding: 10px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.msg-container{
+    width: 100%;
+    display: flex;
+}
+
+.bottom-div1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bottom-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 100%;
+  border: none;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-div {
+  width: 98%;
+  height: 98%;
+  background-image: url("../../Assets/Icons/send.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.input-div {
+  width: calc(100% - 100px);
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid #525BDB;
+  padding-inline: 10px;
+}

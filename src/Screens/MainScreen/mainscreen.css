@@ -304,3 +304,19 @@
     font-weight: 700;
     font-size: 24px;
 }
+
+.study-btn{
+    width: 245px;
+    padding-block: 15px;
+    font-size: 18px;
+    border-radius: 100px;
+    background-color: #525BDB;
+    color: #ffffff;
+    font-weight: 800;
+    border: none;
+    margin-bottom: 60px;
+}
+
+.study-btn:hover{
+    box-shadow: 0 0 10px #9693FF;
+}

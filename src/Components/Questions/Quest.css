@@ -1,0 +1,22 @@
+.ques-div{
+    background-color: white;
+    width: 70%;
+  
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .btn-con{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .ques-btn{
+    width: 100px;
+    margin-top: 20px;
+  }

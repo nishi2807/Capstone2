@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./mainscreen.css";
 import Button from "../../Components/Button/button";
 import { path } from "../../Assets/pdf/path";
 import axios from "axios";
+import useSetCookie from "../../Hooks/useSetCookie";
+import useGetCookie from "../../Hooks/useGetCookie";
+import { useNavigate } from "react-router-dom";
 
 function MainScreen() {
+  const setCookie = useSetCookie();
+  const getCookie = useGetCookie();
+  const navigate = useNavigate();
+
   const [islogin, setIslogin] = useState(false);
   const [issignup, setIssignup] = useState(true);
-  // const [mainPPT, setMainPPT] = useState(path.PPT1[1]);
   const [index, setIndex] = useState(1);
   const [PPT, setPPT] = useState({
     1: path.PPT1,
@@ -45,7 +51,16 @@ function MainScreen() {
   const [email, setEmail] = useState(null);
   const [pass, setPass] = useState(null);
   const [otp, setOtp] = useState(null);
-  const [name, setName] = useState(null);
+
+  useEffect(() => {
+    const email = getCookie("Email");
+
+    if (email) {
+      setEmail(email);
+      setIslogin(true);
+      setIssignup(true);
+    }
+  }, []);
 
   const change_page = () => {
     let len = Object.keys(PPT[loc[4]]).length;
@@ -68,7 +83,8 @@ function MainScreen() {
           if (res.data.message === true) {
             setIslogin(true);
             setIssignup(true);
-            setName(res.data.name);
+            setCookie("Email", res.data.email);
+            setEmail(res.data.email);
           } else {
             alert("Login Fails");
           }
@@ -105,11 +121,14 @@ function MainScreen() {
         .then((res) => {
           if (res.data.message === "Verified") {
             alert(`User is verified`);
-            setIssignup(true);
             axios
               .post("http://localhost:8004/signup", {
                 email: email,
                 password: pass,
+              })
+              .then((res) => {
+                setCookie("Email", res.data.email);
+                setIssignup(true);
               })
               .catch((err) => {
                 console.error("GET Request Error:", err);
@@ -123,6 +142,8 @@ function MainScreen() {
         });
     }
   };
+
+  const handleStudy = () => navigate("/course");
 
   return (
     <div className="main-screen">
@@ -149,7 +170,11 @@ function MainScreen() {
           <div className="details">
             <div className="details-content">
               <div style={{ marginBottom: 10 }}>About us</div>
-              We are dedicated to safegaurding your digital world. Our mission is to empower individuals and organizations with the knowledge and skills to protect themselves from online threats. In today’s interconnected landscape, cybersecurity is not an option.  It’s a necessity. We are here to guide you through this journey.
+              We are dedicated to safegaurding your digital world. Our mission
+              is to empower individuals and organizations with the knowledge and
+              skills to protect themselves from online threats. In today’s
+              interconnected landscape, cybersecurity is not an option. It’s a
+              necessity. We are here to guide you through this journey.
               <div style={{ fontSize: 18, marginTop: 30 }}>
                 Stay Safe, Stay Secure, Start Learning with us.
               </div>
@@ -159,9 +184,9 @@ function MainScreen() {
           <div className="whywe">
             <div className="whywe-title">Why Choose CyberSafe?</div>
             <div className="whywe-main">
-              {data.map((content) => {
+              {data.map((content, index) => {
                 return (
-                  <div className="whywe-content">
+                  <div className="whywe-content" key={index}>
                     <div className="why-con-title">{content.title}</div>
                     <div className="why-con-desc">{content.desc}</div>
                   </div>
@@ -213,6 +238,18 @@ function MainScreen() {
             }}
           ></div>
         </div>
+        {islogin && (
+          <div className="start-study">
+            <button
+              className="study-btn"
+              onClick={() => {
+                handleStudy();
+              }}
+            >
+              Start Course
+            </button>
+          </div>
+        )}
         <div className="main-enroll">
           <div className="logo-details"></div>
           {!islogin && (
