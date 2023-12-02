@@ -165,7 +165,7 @@ function MainScreen() {
   const handleStudy = () => navigate("/course");
 
   const handleLogOut = () => {
-    localStorage.clear()
+    localStorage.removeItem('chat')
     Cookies.remove("Email")
     setIslogin(false);
     setIssignup(true);
