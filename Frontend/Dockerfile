@@ -13,8 +13,6 @@ RUN npm install
 # Copy the entire application to the working directory
 COPY . .
 
-ENV REACT_APP_KEY=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
-
 # Expose the port that the app will run on
 EXPOSE 3000
 
