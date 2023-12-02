@@ -42,8 +42,9 @@ services:
   # Frontend
   react-app:
     container_name: Frontend
-    build: ./Frontend
-    image: frontend
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:

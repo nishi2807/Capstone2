@@ -5,6 +5,7 @@ import Divider from "../../Components/Divider/divider";
 import { path } from "../../Assets/pdf/path";
 import ChatBot from "../../Components/ChatBot/ChatBot";
 import Questions from "../../Components/Questions/Quest";
+import { useNavigate } from "react-router-dom";
 
 const PPT_path = path.PPT5;
 const topics = [
@@ -30,6 +31,7 @@ const modulesLength = modules.length;
 
 function Course_Screen() {
   const getCookie = useGetCookie();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState();
   // const [displayPPT, setDisplayPPT] = useState(`url(${PPT_path[1]})`);
@@ -75,7 +77,7 @@ function Course_Screen() {
   return (
     <div className="main-screen">
       <div className="app-bar">
-        <div className="project-title"></div>
+        <div className="project-title" onClick={() => {navigate('/')}}></div>
         <div className="profile">
           <div className="user-details">
             {/* <div className="name">{name}</div> */}
@@ -86,6 +88,9 @@ function Course_Screen() {
       </div>
       <div className="c-main-div">
         <div className="side-menu">
+          <div className="menu-icon">
+            <div className="ic-menu"></div>
+          </div>
           <div className="menu-content">
             <div className="menu-title">Cybersecurity Awareness</div>
             <div className="progress-bar">

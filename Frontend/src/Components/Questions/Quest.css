@@ -7,16 +7,51 @@
 
     display: flex;
     flex-direction: column;
-
   }
 
   .btn-con{
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
   }
 
   .ques-btn{
     width: 100px;
-    margin-top: 20px;
+  }
+
+  .guestion{
+    display: flex;
+    font-size: 20px;
+  }
+
+  .Q{
+    margin-right: 10px;
+    font-weight: 600;
+  }
+
+  .table{
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .correct{
+    color: #38b000;
+    font-weight: 700;
+    border: 2px solid #38b000;
+    border-radius: 7px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .wrong{
+    color: #d00000;
+    font-weight: 700;
+    border: 2px solid #d00000;
+    border-radius: 7px;
+    padding: 5px;
+    box-sizing: border-box;
   }

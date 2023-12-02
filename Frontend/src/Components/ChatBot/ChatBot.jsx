@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "./ChatBot.css";
 
 function ChatBot() {
-
-  console.log(process.env.API_KEY);
-
   const [inputValue, setInputValue] = useState("");
     const [chat, setChat] = useState(localStorage.getItem('chat') ? JSON.parse(localStorage.getItem('chat')) : []);
 
@@ -17,8 +14,7 @@ function ChatBot() {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              // `Bearer ${process.env.API_KEY}`, // Replace with your API key
-              `Bearer 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`, // Replace with your API key
+              `Bearer ${process.env.REACT_APP_API_KEY}`, // Replace with your API key
           },
           body: JSON.stringify({
             model: "gpt-3.5-turbo",

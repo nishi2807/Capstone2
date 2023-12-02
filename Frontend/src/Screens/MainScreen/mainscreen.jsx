@@ -6,6 +6,8 @@ import axios from "axios";
 import useSetCookie from "../../Hooks/useSetCookie";
 import useGetCookie from "../../Hooks/useGetCookie";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import { notification } from 'antd';
 
 function MainScreen() {
   const setCookie = useSetCookie();
@@ -22,7 +24,7 @@ function MainScreen() {
     4: path.PPT4,
   });
   const [loc, setLoc] = useState({ 1: 2, 2: 3, 3: 4, 4: 1 });
-  const [data, setData] = useState([
+  const data = [
     {
       title: "Your Trusted Cybersecurity Partner",
       desc: "We bring years of expertise and a commitment to your digital security. Our team of cybersecurity professionals is here to support and educate you every step of the way.",
@@ -47,7 +49,7 @@ function MainScreen() {
       title: "Certification and Recognition",
       desc: "Our certifications are respected in the cybersecurity community and can enhance your career opportunities, demonstrating your commitment to digital security excellence.",
     },
-  ]);
+  ];
   const [email, setEmail] = useState(null);
   const [pass, setPass] = useState(null);
   const [otp, setOtp] = useState(null);
@@ -81,12 +83,19 @@ function MainScreen() {
         })
         .then((res) => {
           if (res.data.message === true) {
+            notification.success({
+              message: "User is verified",
+              duration: 2
+            })
             setIslogin(true);
             setIssignup(true);
             setCookie("Email", res.data.email);
             setEmail(res.data.email);
           } else {
-            alert("Login Fails");
+            notification.error({
+              message: "LogIn Fails",
+              duration: 2
+            })
           }
         })
         .catch((err) => {
@@ -106,7 +115,11 @@ function MainScreen() {
         })
         .then((res) => {
           if (res.data.message === "Email sent successfully") {
-            alert(`OTP is mailed to ${email}`);
+            notification.info({
+              message: "OTP generated",
+              description: `OTP is mailed to ${email}`,
+              duration: 2
+            })
           }
         })
         .catch((err) => {
@@ -120,7 +133,10 @@ function MainScreen() {
         })
         .then((res) => {
           if (res.data.message === "Verified") {
-            alert(`User is verified`);
+            notification.success({
+              message: "User is verified",
+              duration: 2
+            })
             axios
               .post("http://localhost:8004/signup", {
                 email: email,
@@ -134,7 +150,10 @@ function MainScreen() {
                 console.error("GET Request Error:", err);
               });
           } else {
-            alert("Incorrect OTP");
+            notification.warning({
+              message: "Incorrect OTP",
+              duration: 2
+            })
           }
         })
         .catch((err) => {
@@ -145,10 +164,20 @@ function MainScreen() {
 
   const handleStudy = () => navigate("/course");
 
+  const handleLogOut = () => {
+    localStorage.clear()
+    Cookies.remove("Email")
+    setIslogin(false);
+    setIssignup(true);
+    setEmail(null);
+    setPass(null);
+    setOtp(null);
+  }
+
   return (
     <div className="main-screen">
       <div className="app-bar">
-        <div className="project-title"></div>
+        <div className="project-title" onClick={() => {navigate('/')}}></div>
         {!islogin && (
           <div className="button">
             <Button title="Login" />
@@ -158,7 +187,6 @@ function MainScreen() {
         {islogin && (
           <div className="profile">
             <div className="user-details">
-              {/* <div className="name">{name}</div> */}
               <div className="useremail">{email}</div>
             </div>
             <div className="profile-pic"></div>
@@ -239,15 +267,27 @@ function MainScreen() {
           ></div>
         </div>
         {islogin && (
-          <div className="start-study">
-            <button
-              className="study-btn"
-              onClick={() => {
-                handleStudy();
-              }}
-            >
-              Start Course
-            </button>
+          <div style={{ display: "flex", justifyContent: "space-between", width:600}}>
+            <div className="start-study">
+              <button
+                className="study-btn"
+                onClick={() => {
+                  handleStudy();
+                }}
+              >
+                Start Course
+              </button>
+            </div>
+            <div className="start-study">
+              <button
+                className="study-btn"
+                onClick={() => {
+                  handleLogOut();
+                }}
+              >
+                Log Out
+              </button>
+            </div>
           </div>
         )}
         <div className="main-enroll">
