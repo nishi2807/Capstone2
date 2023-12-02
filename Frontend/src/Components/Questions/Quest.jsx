@@ -142,6 +142,7 @@ const questions = [
 const answer = ["C", "A", "C", "D", "A", "B", "C", "D", "C", "A"];
 
 
+
 function Questions() {
   const navigate = useNavigate();
   const [selectedAnswer, setSelectedAnswer] = useState(null);
