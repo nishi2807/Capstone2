@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./ChatBot.css";
 
 function ChatBot() {
+
+  console.log(process.env.REACT_APP_API_KEY)
+
   const [inputValue, setInputValue] = useState("");
     const [chat, setChat] = useState(localStorage.getItem('chat') ? JSON.parse(localStorage.getItem('chat')) : []);
 
