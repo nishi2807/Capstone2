@@ -3,7 +3,16 @@ import "./ChatBot.css";
 
 function ChatBot() {
 
-  console.log(process.env.REACT_APP_API_KEY)
+  function removePrefix(inputString, prefix) {
+    if (inputString.startsWith(prefix)) {
+      return inputString.slice(prefix.length);
+    } else {
+      return inputString;
+    }
+  }
+
+  const API_KEY = removePrefix(process.env.REACT_APP_API_KEY,'next')
+  console.log(API_KEY)
 
   const [inputValue, setInputValue] = useState("");
     const [chat, setChat] = useState(localStorage.getItem('chat') ? JSON.parse(localStorage.getItem('chat')) : []);
@@ -17,7 +26,7 @@ function ChatBot() {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              `Bearer ${process.env.REACT_APP_API_KEY}`, // Replace with your API key
+              `Bearer ${API_KEY}`, // Replace with your API key
           },
           body: JSON.stringify({
             model: "gpt-3.5-turbo",
